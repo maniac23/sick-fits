@@ -10,11 +10,10 @@ class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx);
     }
     pageProps.query = ctx.query;
-    return pageProps;
+    return { pageProps };
   }
   render() {
     const { Component, apollo, pageProps } = this.props;
-
     return (
       <Container>
         <ApolloProvider client={apollo}>
@@ -26,6 +25,5 @@ class MyApp extends App {
     );
   }
 }
-import { ApolloApp } from 'next-with-apollo';
 
 export default withData(MyApp);
