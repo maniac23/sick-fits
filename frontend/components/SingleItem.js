@@ -12,9 +12,12 @@ const SingleItemStyle = styled.div`
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-flow: column;
-  min-height: 800px;
+  min-height: 600px;
   h2 {
     text-transform: uppercase;
+  }
+  p {
+    text-transform: lowercase;
   }
 
   img {
@@ -53,7 +56,7 @@ export default class SingleItem extends Component {
                 <title>Sick fits | {item.title}</title>
               </Head>
               <img src={item.largeImage} alt={item.title} />
-              <div className="datails">
+              <div className="details">
                 <h2>{item.title}</h2>
                 <p>{item.description}</p>
               </div>
