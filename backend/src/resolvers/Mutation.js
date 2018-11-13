@@ -212,8 +212,10 @@ const mutations = {
     }
     // query users current cart
     const [existingCartItem] = await ctx.db.query.cartItems({
-      user: { id: userId },
-      item: { id: args.id }
+      where: {
+        user: { id: userId },
+        item: { id: args.id }
+      }
     });
     // check if item is already in the cart and increment quantity
     if (existingCartItem) {
