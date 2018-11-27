@@ -44,6 +44,19 @@ const Query = {
       throw new Error('You are not allowed to see this');
     }
     return order;
+  },
+
+  async orders(parent, args, ctx, info) {
+    const { userId } = ctx.request;
+    if (!userId) throw new Error('You must be logged id');
+    return await ctx.db.query.orders(
+      {
+        where: {
+          user: { id: userId }
+        }
+      },
+      info
+    );
   }
 };
 
