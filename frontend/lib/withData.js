@@ -5,7 +5,7 @@ import { LOCAL_STATE_QUERY, TOGGLE_CART_MUTATION } from '../components/Cart';
 
 function createClient({ headers }) {
   return new ApolloClient({
-    uri: process.env.NODE_ENV === 'development' ? endpoint : endpoint,
+    uri: process.env.NODE_ENV === 'development' ? prodendpoint : endpoint,
     request: operation => {
       operation.setContext({
         fetchOptions: {
