@@ -1,6 +1,6 @@
 import withApollo from 'next-with-apollo';
 import ApolloClient from 'apollo-boost';
-import { endpoint } from '../config';
+import { endpoint, prodendpoint } from '../config';
 import { LOCAL_STATE_QUERY, TOGGLE_CART_MUTATION } from '../components/Cart';
 
 function createClient({ headers }) {
